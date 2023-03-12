@@ -10,7 +10,8 @@ breads_router.get('/:arrayIndex', (req, res) => {
 
 //index
 breads_router.get('/', (req, res) => {
-    res.send(Bread)
+    res.render('index', {breads: Bread})
+    //res.send(Bread)
 })
 
 //to export, anytime we have a file that we want to use elsewhere, we need to export it
