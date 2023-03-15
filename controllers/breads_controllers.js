@@ -2,15 +2,27 @@ const express = require('express')
 const breads_router = express.Router()
 const Bread = require('../models/bread.js')
 
-// show route
+
+// SHOW
 breads_router.get('/:arrayIndex', (req, res) => {
-    res.send(Bread[req.params.arrayIndex])
-})
+    //res.send(Bread[req.params.arrayIndex])
+    if (Bread[req.params.arrayIndex]) {
+    res.render('Show', {
+        bread: Bread[req.params.arrayIndex]
+    })
+    } else {
+        res.send('this index does not exist --> 404')
+    }
+  })
+  
 
 
 //index
 breads_router.get('/', (req, res) => {
-    res.render('index', {breads: Bread})
+    res.render('Index', {
+        breads: Bread,
+        title: 'Index Page'
+    })
     //res.send(Bread)
 })
 
