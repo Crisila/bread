@@ -6,8 +6,11 @@ const PORT = process.env.PORT
 const express = require('express')
 const app = express()
 
-//middleware
+//Dependencies
+const methodOverride = require('method-override')
 
+//middleware
+app.use(methodOverride('_method')) // Part5: The app.use() function takes a callback, methodOverride(), which is a function we required in our dependencies. Next, we will pass the string that will trigger the method override.
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
 

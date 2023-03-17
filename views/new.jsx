@@ -11,10 +11,10 @@ function New () {
             <label htmlFor="name">Name</label>
             <input type="text" name='name' id='name' required />
 
-            <label htmlFor="image">Name</label>
+            <label htmlFor="image">Image</label>
             <input type="text" name='image' id='image' />
 
-            <label htmlFor="hasGluten">Name</label>
+            <label htmlFor="hasGluten">Gluten</label>
             <input type="checkbox" name='hasGluten' id='hasGluten' />
             <br />
             <input type="submit" />
